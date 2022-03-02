@@ -37,14 +37,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="submit" value="送信">
     </form>
     <!--ここにコードを追記-->
-    <?php foreach ($stylists as $key => $value) : ?>
-        <?php if ($key === $select_stylist) : ?>
-            <p>
-                <?= 'あなたの担当は' . $value . 'です' ?>
-            </p>
-            <?php break; ?>
-        <?php endif; ?>
-    <?php endforeach; ?>
+    <? if (!empty($select_stylist)) : ?>
+        <p>あなたの担当は<?= $stylists[$select_stylist] ?>です</p>
+    <? endif; ?>
 
 </body>
 

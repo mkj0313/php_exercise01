@@ -16,11 +16,7 @@ $judge_ment = $_GET['judge_ment'];
 </head>
 
 <body>
-    <? if ($judge_ment === '合格') : ?>
-        <h2>合格です</h2>
-    <? else : ?>
-        <h2>不合格です</h2>
-    <? endif; ?>
+    <h2><?= $judge_ment ?>です</h2>
     <a href="form2_3.php">戻る</a>
 </body>
 

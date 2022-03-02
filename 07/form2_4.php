@@ -79,12 +79,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </form>
 
     <!-- コードを追記-->
-    <? if (empty($err_msgs)) : ?>
-        <h3>以下の内容が送信されました。</h3>
-        <pre style="font-size: 16px">氏名            ：<?= $name ?></pre>
-        <pre style="font-size: 16px">電話番号        ：<?= $tel ?></pre>
-        <pre style="font-size: 16px">メールアドレス  ：<?= $email ?></pre>
-        <pre style="font-size: 16px">購入するもの    ：<?= $items[$item_key] ?></pre>
+    <? if (empty($err_msgs) && !empty($items[$item_key])) : ?>
+        <table>
+            <thead>
+                <tr>
+                    <th>以下の内容が送信されました。</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>氏名：</td>
+                    <td><?= $name ?></td>
+                </tr>
+                <tr>
+                    <td>電話番号：</td>
+                    <td><?= $tel ?></td>
+                </tr>
+                <tr>
+                    <td>メールアドレス：</td>
+                    <td><?= $email ?></td>
+                </tr>
+                <tr>
+                    <td>購入するもの：</td>
+                    <td><?= $items[$item_key] ?></td>
+                </tr>
+            </tbody>
+        </table>
 
     <? endif; ?>
 

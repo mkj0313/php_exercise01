@@ -10,14 +10,7 @@ $prices = [
 
 // コードを追記
 $purchase_item = $_GET['purchase_item'];
-
-foreach ($prices as $key => $value) {
-    if ($purchase_item === $key) {
-        $price = $value;
-        break;
-    }
-}
-
+$price = $prices[$purchase_item];
 
 ?>
 
