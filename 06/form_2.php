@@ -9,8 +9,8 @@
 <body>
     <form action="form_2_post.php" method="POST">
         <div>
-            <label for="">名前</label><br>
-            <input type="text" name="name">
+            <label for="name ">名前</label><br>
+            <input type="text" id="name" name="name">
         </div>
         <div>
             <input type="submit" value="送信">

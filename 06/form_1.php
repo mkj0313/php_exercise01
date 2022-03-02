@@ -20,8 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <h1>POSTメソッド</h1>
     <form action="" method="POST">
         <div>
-            <label for="">年齢</label><br>
-            <input type="number" name="age">
+            <label for="age">年齢</label><br>
+            <input type="number" id="age " name="age">
         </div>
         <div>
             <input type="submit" value="送信">

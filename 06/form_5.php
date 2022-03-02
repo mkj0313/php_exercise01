@@ -14,6 +14,7 @@ $num1 = '';
 $num2 = '';
 $num3 = '';
 $err_msgs = '';
+$total = '';
 
 // methodがPOSTだったら変数に値をセットする
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -23,6 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     //validation
     if (empty($num1) || empty($num2) || empty($num3)) {
         $err_msg = '全てに数字を入力してください';
+    } else {
+        $total = h($num1) + h($num2) + h($num3);
     }
 }
 ?>
@@ -43,24 +46,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php endif; ?>
     <form action="" method="POST">
         <div>
-            <label for="">1つめの数字</label><br>
-            <input type="number" name="num1">
+            <label for="n1">1つめの数字</label><br>
+            <input type="number" id="n1" name="num1">
         </div>
         <div>
-            <label for="">2つめの数字</label><br>
-            <input type="number" name="num2">
+            <label for="n2">2つめの数字</label><br>
+            <input type="number" id="n2" name="num2">
         </div>
         <div>
-            <label for="">3つめの数字</label><br>
-            <input type="number" name="num3">
+            <label for="n3">3つめの数字</label><br>
+            <input type="number" id="n3" name="num3">
         </div>
         <div>
             <input type="submit" value="送信">
         </div>
     </form>
 
-    <?php if (empty($err_msg) && !empty($num1)) : ?>
-        <p> <?= '合計値は' . h($num1) + h($num2) + h($num3) . 'です' ?></p>
+    <?php if (empty($err_msg) && !empty($total)) : ?>
+        <p> <?= '合計値は' . $total . 'です' ?></p>
     <?php endif; ?>
 
 </body>
