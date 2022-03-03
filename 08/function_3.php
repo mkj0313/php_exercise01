@@ -8,25 +8,13 @@ function self_introduction($skills, $likes)
     $all_skills = '';
     $all_likes = '';
 
-    foreach ($skills as $key => $value) {
-        if ($key === 0) {
-            $all_skills = $value;
-        } else {
-            $all_skills .= '、' . $value;
-        }
-    }
-    foreach ($likes as $key => $value) {
-        if ($key === 0) {
-            $all_likes = $value;
-        } else {
-            $all_likes .= '、' . $value;
-        }
-    }
+    $all_skills = implode('、', $skills);
+    $all_likes = implode('、', $likes);
 
 
     return <<<EOM
     私の特技は{$skills_quantities}個あり、{$all_skills}です｡<br>
-    また、趣味は{$likes_quantities}個あり、{$all_likes} です｡
+    また、趣味は{$likes_quantities}個あり、{$all_likes}です｡
     EOM;
 }
 

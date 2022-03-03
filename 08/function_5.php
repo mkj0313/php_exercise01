@@ -9,12 +9,11 @@ function get_date()
     return '今日は、' . $date . $day . '曜日です';
 }
 // 変数を用意
-$return = '';
+$date = '';
 
 // methodがPOSTだったら変数に値をセットする
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // $age = $_POST['age'];
-    $return = get_date();
+    $date = get_date();
 }
 ?>
 <!DOCTYPE html>
@@ -26,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
 <body>
-    <?php if (empty($return)) : ?>
+    <?php if (empty($date)) : ?>
         <h1>本日の日付、曜日を確認しますか？</h1>
         <form action="" method="POST">
             <div>
@@ -34,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         </form>
     <?php else : ?>
-        <h1> <?= $return ?></h1>
+        <h1> <?= $date ?></h1>
         <a href="function_5.php">戻る</a>
     <?php endif; ?>
 
